@@ -1,13 +1,72 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.icon-circle {
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  box-shadow: 1px 1px 7px 3px rgb(0 0 0 / 13%);
+  cursor: pointer;
+}
+.icon-circle svg {
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+
+/* location-item */
+.location-item {
+  border: 1px solid;
+  border-radius: 20px;
+  height: 164px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.location-item img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.location-item span {
+  position: relative;
+  z-index: 99999;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+.location-item__layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.5;
+  border-radius: 20px;
+}
+.popular-locations h3 {
 }
