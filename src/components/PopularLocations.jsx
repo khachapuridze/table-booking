@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Container } from '@chakra-ui/react';
+import { Text, Flex, Container } from '@chakra-ui/react';
 
 function PopularLocations() {
   return (
