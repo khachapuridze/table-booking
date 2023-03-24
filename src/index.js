@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import './index.css';
+import './css/main.scss';
 
 import Home from './pages/Home';
 import TableList from './pages/TableList';

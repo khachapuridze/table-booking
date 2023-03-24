@@ -1,0 +1,68 @@
+@import './restaurnat_card.scss';
+.chakra-container {
+  max-width: 95rem !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
+}
+.home-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+.type-slider {
+  position: relative;
+  .swiper-nav-item {
+    align-items: center;
+    background-color: #fff;
+    border: 0.0625rem solid #d8d9db;
+    border-radius: 50%;
+    box-shadow: 0 0.125rem 0.5rem #9996;
+    display: inline-flex;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+    position: absolute;
+    top: calc(50% - 21px);
+    transform: translate(-50%, 0);
+    z-index: 90;
+    &.swiper-nav-right {
+      right: -40px;
+    }
+    &.swiper-nav-left {
+      left: 0;
+    }
+    span {
+      display: inline-block;
+      font-size: 0;
+      height: 1.5rem;
+      line-height: 1;
+      min-width: 1.5rem;
+      width: 1.5rem;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+// category restaurants
+.category-restaurants {
+  box-shadow: 0 2px 4px #2d333f33;
+  margin: 10px;
+  margin-bottom: 40px;
+  padding: 10px;
+  h3 {
+    color: #2d333f;
+    font-size: 24px;
+    padding-bottom: 16px;
+    font-weight: 700;
+  }
+  &__list {
+    border-top: 0.0625rem solid #d8d9db;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 16px;
+  }
+}

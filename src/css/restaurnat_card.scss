@@ -1,0 +1,42 @@
+.chakra-card {
+  &.restaurant-card {
+    border: 1px solid rgb(216, 217, 219);
+    border-radius: 0;
+    cursor: pointer;
+    .chakra-card__body {
+      padding: 0px;
+      img {
+        height: 132px;
+        width: 100%;
+        border-radius: 0;
+      }
+      .desc {
+        margin-top: 5px;
+      }
+      .stars {
+        margin-top: 5px;
+      }
+      .booked {
+        font-size: 14px;
+        margin-top: 0;
+        font-weight: 500;
+      }
+      .react-stars {
+        span {
+          font-size: 16px !important;
+        }
+      }
+      .chakra-text {
+        margin-top: 5px;
+      }
+      .chakra-stack {
+        margin-top: 0px;
+        padding: 10px;
+      }
+    }
+    .chakra-card__footer {
+      overflow: hidden;
+      padding: 8px;
+    }
+  }
+}
