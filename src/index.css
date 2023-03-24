@@ -70,3 +70,42 @@ code {
 }
 .popular-locations h3 {
 }
+
+/* card */
+.restaurant-card {
+}
+.restaurant-card h2 {
+  color: #2d333f;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.restaurant-card .stars span {
+  color: #2d333f;
+  margin: 0 0 0 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.restaurant-card .desc {
+  color: #2d333f;
+  margin: 0 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurant-card .desc span:not(:first-child) {
+  margin-left: 4px;
+}
+.restaurant-card .booked svg {
+  height: 1.5rem;
+  min-width: 1.5rem;
+  width: 1.5rem;
+  margin-right: 4px;
+}

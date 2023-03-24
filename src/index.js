@@ -5,6 +5,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import './index.css';
 
 import Home from './pages/Home';
+import TableList from './pages/TableList';
+
 import Header from './layouts/Header';
 
 import reportWebVitals from './reportWebVitals';
@@ -13,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+  },
+  {
+    path: '/tables',
+    element: <TableList />,
   },
 ]);
 
