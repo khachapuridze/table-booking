@@ -6,7 +6,7 @@ function PopularLocations() {
       <Text fontSize="2xl" paddingBottom={5}>
         Popular location
       </Text>
-      <Flex justify="space-between">
+      <Flex justify="space-between" gap={30}>
         <div className="location-item">
           <div className="location-item__layer"></div>
           <span>Pizzeria</span>

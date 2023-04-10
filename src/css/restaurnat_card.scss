@@ -2,7 +2,18 @@
   &.restaurant-card {
     border: 1px solid rgb(216, 217, 219);
     border-radius: 0;
+    transition: all 0.3s ease;
     cursor: pointer;
+    &:not(.restaurant-card-v2) {
+      &:hover {
+        box-shadow: 0 2px 4px #2d333f33;
+        transform: translateY(-6px);
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
     .chakra-card__body {
       padding: 0px;
       img {
@@ -33,10 +44,61 @@
         margin-top: 0px;
         padding: 10px;
       }
+      .chakra-button {
+        min-width: 70px;
+        &__group {
+          overflow: hidden;
+        }
+      }
+    }
+    img {
+      transition: transform 0.2s ease;
+      transform: scale(1);
+    }
+    .image-container {
+      overflow: hidden;
     }
     .chakra-card__footer {
       overflow: hidden;
       padding: 8px;
+    }
+  }
+  &.restaurant-card-v2 {
+    width: 100%;
+    min-width: 100%;
+    border: unset;
+    border-bottom: 0.0625rem solid #d8d9db;
+    box-shadow: unset;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    h2 {
+      color: #247f9e;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      margin: 0;
+      word-break: break-word;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .chakra-card {
+      &__body {
+        display: flex;
+        .image-container {
+          width: 205px;
+          min-width: 205px;
+          height: 208px;
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .chakra-stack {
+          margin-left: 16px;
+        }
+      }
     }
   }
 }

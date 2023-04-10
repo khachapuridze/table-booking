@@ -2,14 +2,15 @@ import { useState } from 'react';
 import { Box, Text, Flex, Button } from '@chakra-ui/react';
 import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
+import { NavLink } from 'react-router-dom';
 import '../css/day-picker.css';
-function FindTableHeader() {
+function FindTableHeader({ layout2 }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [openDayPicker, setOpenDayPicker] = useState(false);
   const [selectTime, setSelectTime] = useState('');
   const [selectPerson, setSelectPerson] = useState('1');
   const [searchValue, setSearchValue] = useState('');
-  
+
   const times = [
     {
       value: '2000-02-01T00:00:00',
@@ -43,10 +44,14 @@ function FindTableHeader() {
       w="100%"
       p={10}
       color="white"
+      className={layout2 && 'header-l2'}
     >
-      <Text as="h1" fontSize="5xl" textAlign="center" mb="16px">
-        Find your table for any occasion
-      </Text>
+      {!layout2 && (
+        <Text as="h1" fontSize="5xl" textAlign="center" mb="16px">
+          Find your table for any occasion
+        </Text>
+      )}
+
       <Flex justify="center">
         <div className="booking-day-picker booking-tab-item">
           <Text fontSize="sm" onClick={() => setOpenDayPicker(!openDayPicker)}>
@@ -228,9 +233,11 @@ function FindTableHeader() {
             onChange={(e) => setSearchValue(e.target.value)}
           />
         </div>
-        <Button colorScheme="teal" width="144px" size="md" fontSize="sm">
-          Let's go
-        </Button>
+        <NavLink to="/s">
+          <Button colorScheme="teal" width="144px" size="md" fontSize="sm">
+            Let's go
+          </Button>
+        </NavLink>
       </Flex>
     </Box>
   );

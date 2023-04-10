@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { productList } from '../mock/products';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -6,43 +7,41 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
 import TableCard from './TableCard';
 
-export default function RestaurantTypeSlider() {
+export default function RestaurantTypeSlider(props) {
   return (
     <div className="type-slider">
+      <header>
+        <h2>Available for breakfast now in Varketili</h2>
+
+        <div class="view-all" role="button" tabindex="0">
+          View all
+        </div>
+      </header>
+
       <Swiper
         spaceBetween={20}
         slidesPerView={5}
         modules={[Navigation]}
-        navigation={{ nextEl: '.swiper-nav-right', prevEl: '.swiper-nav-left' }}
+        navigation={{
+          nextEl: `.arrow-right-${props.identifier}`,
+          prevEl: `.arrow-left-${props.identifier}`,
+        }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <TableCard />
-        </SwiperSlide>
+        {productList.map((product, index) => (
+          <SwiperSlide key={index}>
+            <TableCard product={product} />
+          </SwiperSlide>
+        ))}
       </Swiper>
-      <button type="button" tabindex="0" aria-label="Previous" className="swiper-nav-item swiper-nav-left">
+
+      <button
+        type="button"
+        tabindex="0"
+        aria-label="Previous"
+        className={`swiper-nav-item swiper-nav-left arrow-left-${props.identifier}`}
+      >
         <span>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
@@ -55,7 +54,12 @@ export default function RestaurantTypeSlider() {
           </svg>
         </span>
       </button>
-      <button type="button" tabindex="0" aria-label="Previous" className="swiper-nav-item swiper-nav-right">
+      <button
+        type="button"
+        tabindex="0"
+        aria-label="Previous"
+        className={`swiper-nav-item swiper-nav-right arrow-right-${props.identifier}`}
+      >
         <span>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">

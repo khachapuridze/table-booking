@@ -21,7 +21,8 @@ function Home() {
           <CategoryRestaurants category={{ title: 'Best dinings' }} />
         </div>
       </div>
-      <RestaurantTypeSlider />
+      <RestaurantTypeSlider identifier={0} />
+      <RestaurantTypeSlider identifier={1} />
     </Container>,
   ];
 }
