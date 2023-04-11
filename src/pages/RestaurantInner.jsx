@@ -181,7 +181,7 @@ export default function RestaurantInner() {
                       </div>
                       <div>
                         <img
-                          alt="Champagne Dinner Photo"
+                          alt="Champagne Dinner"
                           src="https://images.otstatic.com/prod1/51840766/1/small.png"
                         />
                       </div>
@@ -195,7 +195,7 @@ export default function RestaurantInner() {
                     <h2>Menu</h2>
                   </div>
                 </header>
-                <a href="https://theivyedinburgh.com/menus/" target="_blank">
+                <a href="https://theivyedinburgh.com/menus/" target="_blank" rel="noreferrer">
                   <span>
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
                       <g fill="none" fill-rule="evenodd">
