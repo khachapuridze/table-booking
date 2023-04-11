@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { filters } from '../mock/filters';
 export default function FilterSection() {
   const [selectedFilter, setSelectedFilter] = useState('');
-  const [expensive, setExpensive] = useState('$');
+  // const [expensive, setExpensive] = useState('$');
 
   const updateFilterItem = (e) => {
     setSelectedFilter(e.target.value);

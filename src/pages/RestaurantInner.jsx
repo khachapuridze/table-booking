@@ -9,8 +9,8 @@ export default function RestaurantInner() {
   const params = useParams();
 
   useEffect(() => {
-    setRestaurantInnerData(productList.find((pr) => pr.id == params.id));
-  }, []);
+    setRestaurantInnerData(productList.find((pr) => pr.id === Number(params.id)));
+  }, [params.id]);
 
   return (
     <div className="inner-restaurant">

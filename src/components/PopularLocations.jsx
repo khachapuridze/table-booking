@@ -10,17 +10,17 @@ function PopularLocations() {
         <div className="location-item">
           <div className="location-item__layer"></div>
           <span>Pizzeria</span>
-          <img src={require('../assets/download.jpeg')} alt="img" />
+          <img src={require('../assets/download.jpeg')} alt="image pizzeria" />
         </div>
         <div className="location-item">
           <div className="location-item__layer"></div>
           <span>Sushi</span>
-          <img src={require('../assets/sushi.jpeg')} alt="img" />
+          <img src={require('../assets/sushi.jpeg')} alt="image sushi" />
         </div>
         <div className="location-item">
           <div className="location-item__layer"></div>
           <span>Wine</span>
-          <img src={require('../assets/wine.jpeg')} alt="img" />
+          <img src={require('../assets/wine.jpeg')} alt="image wine" />
         </div>
       </Flex>
     </Container>

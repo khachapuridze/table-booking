@@ -17,21 +17,6 @@ import Footer from './layouts/Footer';
 
 import reportWebVitals from './reportWebVitals';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/tables',
-    element: <TableList />,
-  },
-  {
-    path: '/r/:id',
-    element: <RestaurantInner />,
-  },
-]);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
