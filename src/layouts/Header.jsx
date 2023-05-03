@@ -58,6 +58,7 @@ function Header() {
               _hover={{
                 background: '#fffff',
               }}
+              onClick={() => setOpenModal(true)}
             >
               Sign in
             </Button>
