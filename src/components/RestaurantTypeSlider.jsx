@@ -13,7 +13,7 @@ export default function RestaurantTypeSlider(props) {
       <header>
         <h2>Available for breakfast now in Varketili</h2>
 
-        <div class="view-all" role="button" tabindex="0">
+        <div className="view-all" role="button" tabindex="0">
           View all
         </div>
       </header>

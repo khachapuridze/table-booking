@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
 import { Flex, Spacer, Container, Text, Button, Box } from '@chakra-ui/react';
+import SignIn from '../components/Modals/SignIn';
 
 function Header() {
   const [value, setValue] = useState('EN');
+  const [openModal, setOpenModal] = useState(false);
   const handleChange = (e) => setValue(e.target.value);
 
   return (
@@ -33,6 +35,8 @@ function Header() {
       <Flex>
         <Container maxW="container.xl" color="#2d333f">
           <Flex minWidth="max-content" alignItems="center" gap="2" padding={2}>
+            <img style={{ width: 30 }} src={require('../assets/logo.jpeg')} alt="logo" />
+
             <Spacer />
 
             <Button
@@ -42,6 +46,7 @@ function Header() {
                 background: '#0b7396',
               }}
               color="white"
+              onClick={() => setOpenModal(true)}
             >
               Sign up
             </Button>
@@ -71,6 +76,7 @@ function Header() {
           </Flex>
         </Container>
       </Flex>
+      <SignIn show={openModal} hideModal={() => setOpenModal(false)} />
     </header>
   );
 }

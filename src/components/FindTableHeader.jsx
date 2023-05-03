@@ -32,22 +32,22 @@ function FindTableHeader({ layout2 }) {
   const timeSelctions = times.map((t) => <option value={t.value}>{t.title}</option>);
 
   const onSetSelectedDate = (date) => {
-    setTimeout(() => {
-      setSelectedDate(date);
-      setOpenDayPicker(false);
-    }, 10);
+    setSelectedDate(date);
+    setOpenDayPicker(false);
   };
 
   return (
     <Box
-      bg="linear-gradient(.647turn,#1a0a47cc,#0d1b4599 .01%,#0d1b45cc 51.04%,#0d1b45 99.1%)"
+      bg={'url(' + require('../assets/Tbilisi.jpeg') + ') top left / cover no-repeat'}
       w="100%"
       p={10}
       color="white"
+      position={'relative'}
       className={layout2 && 'header-l2'}
     >
+      <div className="header-dark-layer"></div>
       {!layout2 && (
-        <Text as="h1" fontSize="5xl" textAlign="center" mb="16px">
+        <Text as="h1" fontSize="5xl" textAlign="center" mb="16px" zIndex={2} position={'relative'}>
           Find your table for any occasion
         </Text>
       )}
@@ -78,14 +78,14 @@ function FindTableHeader({ layout2 }) {
               </svg>
             </span>
           </Text>
-          {openDayPicker && (
-            <DayPicker
-              mode="single"
-              selected={selectedDate}
-              disabled={[{ from: new Date(1, 1, 1), to: new Date() }]}
-              onSelect={onSetSelectedDate}
-            />
-          )}
+
+          <DayPicker
+            style={!openDayPicker && { display: 'none' }}
+            mode="single"
+            selected={selectedDate}
+            disabled={[{ from: new Date(1, 1, 1), to: new Date() }]}
+            onSelect={onSetSelectedDate}
+          />
         </div>
         <div className="booking-tab-item booking-time-picker">
           <Text fontSize="sm">

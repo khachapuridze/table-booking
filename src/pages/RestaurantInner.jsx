@@ -215,7 +215,7 @@ export default function RestaurantInner() {
               <h2>Reservation</h2>
               <div className="inner-restaurant__reservation-filters">
                 <div>
-                  <label for="restProfileSideBarDtpPartySizePicker">Party Size</label>
+                  <label htmlFor="restProfileSideBarDtpPartySizePicker">Party Size</label>
                   <div value="4" className="filter-select">
                     <select
                       aria-label="Party size selector"
