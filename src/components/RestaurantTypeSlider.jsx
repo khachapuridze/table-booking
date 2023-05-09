@@ -13,7 +13,7 @@ export default function RestaurantTypeSlider(props) {
       <header>
         <h2>Available for breakfast now in Varketili</h2>
 
-        <div className="view-all" role="button" tabindex="0">
+        <div className="view-all" role="button" tabIndex="0">
           View all
         </div>
       </header>
@@ -38,7 +38,7 @@ export default function RestaurantTypeSlider(props) {
 
       <button
         type="button"
-        tabindex="0"
+        tabIndex="0"
         aria-label="Previous"
         className={`swiper-nav-item swiper-nav-left arrow-left-${props.identifier}`}
       >
@@ -56,7 +56,7 @@ export default function RestaurantTypeSlider(props) {
       </button>
       <button
         type="button"
-        tabindex="0"
+        tabIndex="0"
         aria-label="Previous"
         className={`swiper-nav-item swiper-nav-right arrow-right-${props.identifier}`}
       >

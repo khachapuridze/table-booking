@@ -1,12 +1,41 @@
-import { Container, Flex } from '@chakra-ui/react';
+import { DayPicker } from 'react-day-picker';
+import { Container, Flex, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { format } from 'date-fns';
 import { useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
 import { productList } from '../mock/products';
+import Dishes from '../components/RestaurantInner/Dishes';
+import Photos from '../components/RestaurantInner/Photos';
 
 export default function RestaurantInner() {
   const [restaurantInnerData, setRestaurantInnerData] = useState({});
+  const [openDayPicker, setOpenDayPicker] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [tabItems, setTabItems] = useState([
+    {
+      title: 'Overview',
+    },
+    {
+      title: 'Popular dishes',
+    },
+    {
+      title: 'Photos',
+    },
+    {
+      title: 'Menu',
+    },
+    {
+      title: 'Reviews',
+    },
+  ]);
+
   const params = useParams();
+
+  const onSetSelectedDate = (date) => {
+    setSelectedDate(date);
+    setOpenDayPicker(false);
+  };
 
   useEffect(() => {
     setRestaurantInnerData(productList.find((pr) => pr.id === Number(params.id)));
@@ -22,11 +51,11 @@ export default function RestaurantInner() {
           <Flex justify="space-between" gap={30}>
             <div className="inner-restaurant__info">
               <nav className="info-nav">
-                <li className="active">Overview</li>
-                <li>Photos</li>
-                <li>
-                  <a href="#menu">Menu</a>
-                </li>
+                {tabItems.map((tab, index) => (
+                  <li key={index}>
+                    <a href="#">{tab.title}</a>
+                  </li>
+                ))}
               </nav>
               <h1>{restaurantInnerData.title}</h1>
               <div className="restaurant-overview">
@@ -171,7 +200,7 @@ export default function RestaurantInner() {
                         </section>
                         <button
                           type="button"
-                          tabindex="0"
+                          tabIndex="0"
                           data-test="experience-reserve-button"
                           aria-label="Reserve"
                           theme="primary"
@@ -180,16 +209,13 @@ export default function RestaurantInner() {
                         </button>
                       </div>
                       <div>
-                        <img
-                          alt="Champagne Dinner"
-                          src="https://images.otstatic.com/prod1/51840766/1/small.png"
-                        />
+                        <img alt="Champagne Dinner" src="https://images.otstatic.com/prod1/51840766/1/small.png" />
                       </div>
                     </li>
                   </ul>
                 </div>
               </section>
-              <section className="inner-restaurant__info-content" data-test="menu" id="menu">
+              <section className="inner-restaurant__info-content" id="menu">
                 <header data-test="section-header">
                   <div>
                     <h2>Menu</h2>
@@ -209,6 +235,12 @@ export default function RestaurantInner() {
                   </span>
                   <span>View menu on restaurant's website</span>
                 </a>
+              </section>
+              <section className="inner-restaurant__info-content" id="dishes">
+                <Dishes />
+              </section>
+              <section className="inner-restaurant__info-content" id="photos">
+                <Photos />
               </section>
             </div>
             <div className="inner-restaurant__reservation">
@@ -250,19 +282,29 @@ export default function RestaurantInner() {
                   <label>Time</label>
                 </div>
                 <div className="bookable-restaurant-profile-day-picker">
-                  <div className="calendar filter-select">
-                    <select
-                      aria-label="Time selector"
-                      data-test="time-picker"
-                      id="restProfileSideBartimePickerDtpPicker"
-                    >
-                      <option value="2000-02-01T22:00:00" selected="">
-                        10:00 PM
-                      </option>
-                      <option value="2000-02-01T22:30:00">10:30 PM</option>
-                      <option value="2000-02-01T23:00:00">11:00 PM</option>
-                      <option value="2000-02-01T23:30:00">11:30 PM</option>
-                    </select>
+                  <div className="calendar filter-select booking-day-picker">
+                    <Text fontSize="sm" onClick={() => setOpenDayPicker(!openDayPicker)}>
+                      {format(selectedDate, 'PP')}
+                      <span>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                          <g fill="none">
+                            <path
+                              d="M11,11 L11,14.5 C11,14.7761424 10.7761424,15 10.5,15 L9.5,15 C9.22385763,15 9,14.7761424 9,14.5 L9,10.5 L9,9.5 C9,9.22385763 9.22385763,9 9.5,9 L14.5,9 C14.7761424,9 15,9.22385763 15,9.5 L15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L11,11 Z"
+                              fill="#2D333F"
+                              transform="translate(12.000000, 12.000000) rotate(-135.000000) translate(-12.000000, -12.000000)"
+                            ></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </Text>
+
+                    <DayPicker
+                      style={!openDayPicker && { display: 'none' }}
+                      mode="single"
+                      selected={selectedDate}
+                      disabled={[{ from: new Date(1, 1, 1), to: new Date() }]}
+                      onSelect={onSetSelectedDate}
+                    />
                   </div>
                   <div className="bookable-restaurant-profile-time-picker">
                     <div className="filter-select">
@@ -282,7 +324,7 @@ export default function RestaurantInner() {
                   </div>
                 </div>
               </div>
-              <button type="button" className="find-table-btn" aria-label="Find a time" tabindex="0">
+              <button type="button" className="find-table-btn" aria-label="Find a time" tabIndex="0">
                 Find a time
               </button>
               <section className="inner-restaurant__reservation-bottom">
@@ -303,7 +345,7 @@ export default function RestaurantInner() {
                 <div>
                   <div className="available">
                     Experiences are available.
-                    <button type="button" tabindex="0" aria-label="See details" theme="linkButton">
+                    <button type="button" tabIndex="0" aria-label="See details" theme="linkButton">
                       See details
                     </button>
                   </div>

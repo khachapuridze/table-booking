@@ -1,14 +1,4 @@
-import {
-  Card,
-  CardBody,
-  Image,
-  Stack,
-  Text,
-  ButtonGroup,
-  Button,
-  Heading,
-  Flex,
-} from '@chakra-ui/react';
+import { Card, CardBody, Image, Stack, Text, ButtonGroup, Button, Heading, Flex } from '@chakra-ui/react';
 import ReactStars from 'react-rating-stars-component';
 import { NavLink } from 'react-router-dom';
 
