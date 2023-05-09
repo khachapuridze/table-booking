@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import Modal from '../../components/Modal';
 
 export default function SignIn(props) {
-  const [emailVersion, setEmailVersion] = useState(false)
   return (
-    <Modal className="test" show={props.show} hideModal={() => props.hideModal()} >
+    <Modal className="test" show={props.show} hideModal={() => props.hideModal()}>
       <div className="signin-modal">
         <h3 className="signin-modal__title">Enter your phone number</h3>
         <p className="signin-modal__desc">

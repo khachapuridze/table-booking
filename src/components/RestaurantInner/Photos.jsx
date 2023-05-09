@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function Photos() {
-  const [photos, setPhotos] = useState([
+  const [photos] = useState([
     {
       src: 'https://resizer.otstatic.com/v2/photos/xlarge/1/28390405.jpg',
     },
@@ -35,7 +35,7 @@ function Photos() {
       <div className="photos">
         {photos.slice(0, 5).map((photo) => (
           <button>
-            <img src={photo.src} alt="restaurant image" />
+            <img src={photo.src} alt="restaurant" />
             <div className="more">
               <p>+{photos.length - 5} More</p>
             </div>

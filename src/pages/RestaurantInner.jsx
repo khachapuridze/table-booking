@@ -12,7 +12,7 @@ export default function RestaurantInner() {
   const [restaurantInnerData, setRestaurantInnerData] = useState({});
   const [openDayPicker, setOpenDayPicker] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [tabItems, setTabItems] = useState([
+  const [tabItems] = useState([
     {
       title: 'Overview',
     },
@@ -53,7 +53,7 @@ export default function RestaurantInner() {
               <nav className="info-nav">
                 {tabItems.map((tab, index) => (
                   <li key={index}>
-                    <a href="#">{tab.title}</a>
+                    <a href="#test">{tab.title}</a>
                   </li>
                 ))}
               </nav>

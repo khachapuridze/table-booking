@@ -5,7 +5,7 @@ import { Navigation } from 'swiper';
 import { useState } from 'react';
 
 function Dishes() {
-  const [popularDishes, setPopularDishes] = useState([
+  const [popularDishes] = useState([
     {
       title: 'Khinkali',
       desc: 'Marinated Skirt Steak Charred Peppers & Onions Flour Tortillas Cheddar Cheese Sour Cream Salsa Verde',
